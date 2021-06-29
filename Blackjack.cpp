@@ -470,6 +470,8 @@ int main()
         // Update player hand count
         updateHandCountOf(playerHand, playerHandTotal);
 
+        printSectionSeparator();
+
         // If player wins with a blackjack, pay them 3:2
         if (playerWins && playerHandTotal == 21)
         {
@@ -507,6 +509,8 @@ int main()
         // No more money to bet
         if (playerBalance == 0)
         {
+            printSectionSeparator();
+
             // No money, no play
             cout << "\nYou ran out of money! Thanks for playing, come again next time!" << endl;
             cout << "\nPress ENTER to exit." << endl;
@@ -540,7 +544,7 @@ int main()
 
     // Get a character/keystroke to continue
     char d = getchar();
-    
+
     // Exit program
     return 0;
 }
