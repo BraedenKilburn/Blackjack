@@ -479,7 +479,7 @@ int main()
             printSectionSeparator();
 
             cout << "\nCongratulations! You won!" << endl;
-            cout << "You earned $" << currentBet * (3 / 2) << " from that round!\n"
+            cout << "You earned $" << payout << " from that round!\n"
                  << endl;
             displayPlayerBalance(playerBalance);
         }
@@ -492,7 +492,7 @@ int main()
             printSectionSeparator();
 
             cout << "\nCongratulations! You win!" << endl;
-            cout << "You earned $" << currentBet << " from that round!\n"
+            cout << "You earned $" << payout << " from that round!\n"
                  << endl;
             displayPlayerBalance(playerBalance);
         }
