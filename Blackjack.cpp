@@ -27,6 +27,11 @@ void displayPlayerBalance(int &playerBalance)
     cout << "Current Balance: $" << playerBalance << endl;
 }
 
+/**
+* @brief Displays the individual card values of the player's hand
+*
+* @param playersCards
+*/
 void displayIndividualCardsOfPlayer(vector<int> &playersCards)
 {
     cout << "\nYour current hand consists of the following card values: " << endl;
@@ -35,6 +40,11 @@ void displayIndividualCardsOfPlayer(vector<int> &playersCards)
     cout << endl;
 }
 
+/**
+* @brief Displays the individual card values of the dealer's hand
+*
+* @param dealersCards
+*/
 void displayIndividualCardsOfDealer(vector<int> &dealersCards)
 {
     cout << "\nThe dealer's current hand consists of the following card values: " << endl;
@@ -43,6 +53,11 @@ void displayIndividualCardsOfDealer(vector<int> &dealersCards)
     cout << endl;
 }
 
+/**
+* @brief Display the total value of the player's hand
+*
+* @param playerHandTotal
+*/
 void displayNewPlayerHandTotal(int &playerHandTotal)
 {
     cout << "\nNew Hand Value: " << playerHandTotal << endl;
@@ -129,6 +144,11 @@ int requestPlayerMove()
     }
 }
 
+/**
+* @brief Ask the user if they want to play again
+*
+* @param playAgain
+*/
 void requestPlayAgain(bool &playAgain)
 {
     while (true)
@@ -170,23 +190,40 @@ int dealCard()
     return card;
 }
 
+/**
+* @brief Add card to someone's hand (either player or dealer)
+*
+* @param HittersHand
+*/
 void addCardTo(vector<int> &hittersHand)
 {
     int newCard = dealCard();
     hittersHand.push_back(newCard);
 }
 
+/**
+* @brief Display the total value of one's hand
+*
+* @param CurrentHand
+*/
 void displayHandTotalOf(vector<int> &currentHand)
 {
     cout << accumulate(currentHand.begin(), currentHand.end(), 0) << endl;
 }
 
+/**
+* @brief Update a player's hand total by adding all of their card values
+*
+* @param CurrentHand
+* @param HandTotal
+*/
 void updateHandCountOf(vector<int> &currentHand, int &handTotal)
 {
     // Update player hand count
     handTotal = accumulate(currentHand.begin(), currentHand.end(), 0);
 }
 
+// Line break function
 void printSectionSeparator()
 {
     cout << endl
@@ -479,8 +516,7 @@ int main()
             cin.ignore(256, '\n');
 
             // Get a character/keystroke to continue
-            char c;
-            c = getchar();
+            char c = getchar();
 
             // Exit program
             return 0;
@@ -503,9 +539,8 @@ int main()
     cin.ignore(256, '\n');
 
     // Get a character/keystroke to continue
-    char d;
-    d = getchar();
-
+    char d = getchar();
+    
     // Exit program
     return 0;
 }
