@@ -470,13 +470,14 @@ int main()
         // Update player hand count
         updateHandCountOf(playerHand, playerHandTotal);
 
-        printSectionSeparator();
-
         // If player wins with a blackjack, pay them 3:2
         if (playerWins && playerHandTotal == 21)
         {
             int payout = currentBet * (3 / 2) + currentBet;
             playerBalance += payout;
+
+            printSectionSeparator();
+
             cout << "\nCongratulations! You won!" << endl;
             cout << "You earned $" << currentBet * (3 / 2) << " from that round!\n"
                  << endl;
@@ -487,6 +488,9 @@ int main()
         {
             int payout = currentBet * 2;
             playerBalance += payout;
+
+            printSectionSeparator();
+
             cout << "\nCongratulations! You win!" << endl;
             cout << "You earned $" << currentBet << " from that round!\n"
                  << endl;
@@ -496,12 +500,17 @@ int main()
         else if (playerTies)
         {
             playerBalance += currentBet;
+
+            printSectionSeparator();
+
             cout << "\nYou tied! You get your money back!" << endl;
             displayPlayerBalance(playerBalance);
         }
         // If player lost (don't give back the bet)
         else
         {
+            printSectionSeparator();
+
             cout << "\nYou lost, better luck next time!" << endl;
             displayPlayerBalance(playerBalance);
         }
