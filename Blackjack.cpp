@@ -167,7 +167,7 @@ void requestPlayAgain(bool &playAgain)
             cout << "You have entered wrong input, please enter a number!" << endl;
         }
         // Player doesn't enter a choice
-        else if (playAgain > 1 || playAgain < 0)
+        else if (playAgain != 1 && playAgain != 0)
         {
             cout << "Not a valid choice!" << endl;
             cout << endl;
